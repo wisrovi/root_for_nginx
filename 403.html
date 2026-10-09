@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>403 Forbidden // Access Policy Disallowed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Orbitron:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09030a;
+      --card-bg: rgba(18, 6, 22, 0.85);
+      --border: rgba(248, 113, 113, 0.35);
+      --neon-red: #f87171;
+      --text-main: #fecdd3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      max-width: 650px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 0 50px rgba(239, 68, 68, 0.25);
+    }
+
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .brand-symbol {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #ef4444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-family: 'Orbitron', monospace;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+    .brand-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid var(--border);
+      color: var(--neon-red);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #fca5a5;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .details-box {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+    }
+    .row span:last-child {
+      color: var(--neon-red);
+      font-weight: 600;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: 'Fira Code', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand-header">
+      <div class="brand-symbol">eC</div>
+      <div class="brand-title">ecaptureDtech // Security Gateway</div>
+    </div>
+
+    <div class="badge">SECURITY INCIDENT // BLOCKED</div>
+    <h1>403 FORBIDDEN</h1>
+    <p>
+      Your request was dropped by the perimeter security gateway. 
+      The payload violated access inspection policies or contained prohibited signatures.
+    </p>
+
+    <div class="details-box">
+      <div class="row">
+        <span>Gateway Action:</span>
+        <span>DROP_CONNECTION</span>
+      </div>
+      <div class="row">
+        <span>Reason:</span>
+        <span>Perimeter Policy Anomaly Detected</span>
+      </div>
+      <div class="row">
+        <span>Incident Timestamp:</span>
+        <span id="ts">Loading...</span>
+      </div>
+    </div>
+
+    <a href="/" class="btn">Return to Edge Gateway</a>
+  </div>
+
+  <div class="footer">
+    &copy; eCaptureDtech &bull; ecapturedtech.com
+  </div>
+
+  <script>
+    document.getElementById('ts').textContent = new Date().toUTCString();
+  </script>
+</body>
+</html>
